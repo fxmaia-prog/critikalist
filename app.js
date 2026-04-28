@@ -412,12 +412,25 @@ function initEvents() {
 
 }
 
+function initHeroRotation() {
+  const slides = $$(".hero-slide");
+  if (slides.length < 2) return;
+
+  let active = 0;
+  window.setInterval(() => {
+    slides[active].classList.remove("is-active");
+    active = (active + 1) % slides.length;
+    slides[active].classList.add("is-active");
+  }, 30000);
+}
+
 function boot() {
   renderFeatured();
   renderTerpenes();
   renderGlossary();
   initFilters();
   initEvents();
+  initHeroRotation();
   renderAll();
 }
 

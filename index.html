@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=hero-carousel-3" />
   </head>
   <body>
     <div class="site-shell">
@@ -43,7 +43,11 @@
       <main>
         <section class="tab-panel is-active" data-tab-panel="home">
           <div class="hero-section">
-            <div class="hero-image" aria-hidden="true"></div>
+            <div class="hero-media" aria-hidden="true">
+              <img class="hero-slide is-active" src="assets/hero-01-white-widow.jpg" alt="" />
+              <img class="hero-slide" src="assets/hero-02-kush-tribe.jpg" alt="" />
+              <img class="hero-slide" src="assets/hero-03-neon-lounge.jpg" alt="" />
+            </div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
               <p class="eyebrow">Curated Cannabis Field Guide</p>
@@ -229,6 +233,6 @@
       <button type="button" data-tab-link="learn">Learn</button>
     </div>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=hero-carousel-3"></script>
   </body>
 </html>
