@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE CRITIKAL LIST | Cannabis Strain Index</title>
+    <meta
+      name="description"
+      content="A detailed, mobile-friendly cannabis strain directory with sativa/indica percentages, terpene profiles, potency ranges, and comparison tools."
+    />
+    <link rel="icon" href="assets/brand-badge.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar" id="topbar">
+        <a class="brand" href="#home" data-tab-link="home" aria-label="THE CRITIKAL LIST home">
+          <img src="assets/brand-badge.png" alt="" />
+          <span>THE CRITIKAL LIST</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+          <button class="nav-link is-active" type="button" data-tab-link="home">Home</button>
+          <button class="nav-link" type="button" data-tab-link="index">Strain Index</button>
+          <button class="nav-link" type="button" data-tab-link="compare">Compare</button>
+          <button class="nav-link" type="button" data-tab-link="terpenes">Terpenes</button>
+          <button class="nav-link" type="button" data-tab-link="learn">Learn</button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="tab-panel is-active" data-tab-panel="home">
+          <div class="hero-section">
+            <div class="hero-image" aria-hidden="true"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <p class="eyebrow">Curated Cannabis Field Guide</p>
+              <h1>THE<br />CRITIKAL LIST</h1>
+              <p class="hero-copy">
+                Browse, sort, and compare detailed strain profiles by sativa/indica balance,
+                potency, terpene character, flavor, and effect notes.
+              </p>
+              <div class="hero-actions">
+                <button class="button button-primary" type="button" data-tab-link="index">Explore Strains</button>
+                <button class="button button-ghost" type="button" data-tab-link="compare">Build Compare</button>
+              </div>
+            </div>
+            <aside class="featured-panel" aria-label="Featured strain">
+              <span class="panel-kicker">Featured Strain</span>
+              <div id="featured-strain"></div>
+            </aside>
+          </div>
+
+          <div class="section-wrap intro-grid">
+            <article class="image-card">
+              <img src="assets/strain-macro.png" alt="Macro cannabis flower in a dark tray" />
+              <div>
+                <span>Catalog Depth</span>
+                <strong id="strain-count">0</strong>
+                <small>profiles with detailed filters</small>
+              </div>
+            </article>
+            <article class="stat-card">
+              <span>Sativa / Indica Sorting</span>
+              <strong>0-100%</strong>
+              <p>Every card includes a fast-read balance bar and sortable percentage values.</p>
+            </article>
+            <article class="stat-card">
+              <span>Terpene Notes</span>
+              <strong>10+</strong>
+              <p>Find strains by dominant aroma compounds, flavor direction, and likely experience.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="tab-panel" data-tab-panel="index">
+          <div class="page-head">
+            <p class="eyebrow">Strain Index</p>
+            <h2>Find the right profile fast.</h2>
+            <p>
+              Search by name, lineage, flavor, effect, or terpene. Sort by sativa, indica, THC, CBD,
+              or name.
+            </p>
+          </div>
+
+          <div class="catalog-layout">
+            <aside class="filters-panel">
+              <label class="field">
+                <span>Search</span>
+                <input id="search-input" type="search" placeholder="Gelato, myrcene, citrus..." />
+              </label>
+              <label class="field">
+                <span>Type</span>
+                <select id="type-filter">
+                  <option value="all">All profiles</option>
+                  <option value="Sativa">Sativa leaning</option>
+                  <option value="Indica">Indica leaning</option>
+                  <option value="Hybrid">Hybrid</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Dominant terpene</span>
+                <select id="terpene-filter">
+                  <option value="all">All terpenes</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Minimum THC <b id="thc-value">0%</b></span>
+                <input id="thc-filter" type="range" min="0" max="32" value="0" />
+              </label>
+              <label class="field">
+                <span>Sort</span>
+                <select id="sort-select">
+                  <option value="name">Name A-Z</option>
+                  <option value="sativa">Sativa % high to low</option>
+                  <option value="indica">Indica % high to low</option>
+                  <option value="thc">THC high to low</option>
+                  <option value="cbd">CBD high to low</option>
+                </select>
+              </label>
+              <button class="button button-ghost full-width" id="reset-filters" type="button">Reset Filters</button>
+            </aside>
+
+            <div class="catalog-main">
+              <div class="catalog-toolbar">
+                <p id="result-count">Showing all strains</p>
+                <div class="view-toggle" aria-label="View mode">
+                  <button class="is-active" type="button" data-view="grid">Cards</button>
+                  <button type="button" data-view="list">List</button>
+                </div>
+              </div>
+              <div class="strain-grid" id="strain-grid"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tab-panel" data-tab-panel="compare">
+          <div class="page-head compact">
+            <p class="eyebrow">Compare</p>
+            <h2>Stack profiles side by side.</h2>
+            <p>Select up to three strains from the index, or choose them below.</p>
+          </div>
+          <div class="compare-picker" id="compare-picker"></div>
+          <div class="compare-grid" id="compare-grid"></div>
+        </section>
+
+        <section class="tab-panel" data-tab-panel="terpenes">
+          <div class="texture-band">
+            <div>
+              <p class="eyebrow">Terpenes</p>
+              <h2>Aroma is data.</h2>
+              <p>
+                Terpenes shape the smell and taste of cannabis and may influence how a profile feels.
+                Effects vary by person, dose, product quality, and setting.
+              </p>
+            </div>
+          </div>
+          <div class="terpene-grid" id="terpene-grid"></div>
+        </section>
+
+        <section class="tab-panel" data-tab-panel="learn">
+          <div class="page-head">
+            <p class="eyebrow">Learn</p>
+            <h2>Read the label like a critic.</h2>
+            <p>
+              Use strain labels as a starting point, then evaluate cannabinoid range, terpene profile,
+              freshness, and your own tolerance.
+            </p>
+          </div>
+          <div class="learn-grid">
+            <article>
+              <span>01</span>
+              <h3>Sativa, Indica, Hybrid</h3>
+              <p>
+                These categories are best treated as broad experience signals. The actual profile is
+                better understood through genetics, cannabinoids, terpenes, and batch testing.
+              </p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Potency</h3>
+              <p>
+                THC percentage is only one metric. A higher number does not guarantee a better
+                session, and lower-potency profiles can be more functional or flavorful.
+              </p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Terpene Fit</h3>
+              <p>
+                Citrus-heavy limonene, earthy myrcene, peppery caryophyllene, piney pinene, and
+                floral linalool all point toward different aroma and feel directions.
+              </p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Responsible Use</h3>
+              <p>
+                This directory is informational only. Follow local laws, avoid driving or operating
+                equipment while impaired, and consult a licensed professional for medical questions.
+              </p>
+            </article>
+          </div>
+          <div class="glossary">
+            <h3>Glossary</h3>
+            <div id="glossary-list"></div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <div class="mobile-tabbar" aria-label="Mobile navigation">
+      <button type="button" data-tab-link="home">Home</button>
+      <button type="button" data-tab-link="index">Index</button>
+      <button type="button" data-tab-link="compare">Compare</button>
+      <button type="button" data-tab-link="learn">Learn</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
