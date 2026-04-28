@@ -140,7 +140,6 @@ const state = {
   terpene: "all",
   minThc: 0,
   sort: "name",
-  view: "grid",
   compare: JSON.parse(localStorage.getItem("critikalCompare") || "[]").slice(0, 3)
 };
 
@@ -222,7 +221,6 @@ function cardTemplate(strain) {
 function renderIndex() {
   const list = visibleStrains();
   const grid = $("#strain-grid");
-  grid.classList.toggle("is-list", state.view === "list");
   $("#result-count").textContent = `Showing ${list.length} of ${strains.length} strains`;
   grid.innerHTML = list.length
     ? list.map(cardTemplate).join("")
@@ -384,12 +382,6 @@ function initEvents() {
       return;
     }
 
-    const viewButton = event.target.closest("[data-view]");
-    if (viewButton) {
-      state.view = viewButton.dataset.view;
-      $$("[data-view]").forEach((button) => button.classList.toggle("is-active", button === viewButton));
-      renderIndex();
-    }
   });
 
   $(".nav-toggle").addEventListener("click", () => {
@@ -421,7 +413,7 @@ function initHeroRotation() {
     slides[active].classList.remove("is-active");
     active = (active + 1) % slides.length;
     slides[active].classList.add("is-active");
-  }, 30000);
+  }, 10000);
 }
 
 function boot() {
