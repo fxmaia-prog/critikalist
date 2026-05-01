@@ -94,6 +94,33 @@ const strains = [
   ["Tahoe OG", 10, 90, 22, 0.1, "Indica", "OG Kush phenotype", "Myrcene", ["earth", "lemon", "pine"], ["sleepy", "heavy", "calm"], "Strong OG indica with earthy lemon and deep night energy."],
   ["Tropicana Cookies", 70, 30, 22, 0.1, "Sativa", "Girl Scout Cookies x Tangie", "Caryophyllene", ["orange", "cookie", "tropical"], ["creative", "happy", "uplifted"], "Orange-cookie sativa hybrid with vivid citrus color and lift."],
   ["White Runtz", 50, 50, 24, 0.1, "Hybrid", "Zkittlez x Gelato", "Limonene", ["candy", "cream", "fruit"], ["euphoric", "relaxed", "smooth"], "Creamy candy hybrid with a silky, balanced experience."],
+  ["ACDC", 50, 50, 6, 14, "Hybrid", "Cannatonic phenotype", "Myrcene", ["earth", "citrus", "sweet"], ["clear", "mild", "functional"], "CBD-rich cultivar often chosen when people want low-intoxicating balance."],
+  ["Alien OG", 40, 60, 24, 0.1, "Hybrid", "Tahoe OG x Alien Kush", "Limonene", ["lemon", "pine", "earth"], ["euphoric", "relaxed", "strong"], "Potent OG-family hybrid with bright lemon and dense body weight."],
+  ["Berry White", 35, 65, 20, 0.2, "Indica", "Blueberry x White Widow", "Myrcene", ["berry", "pine", "sweet"], ["calm", "happy", "smooth"], "Blueberry and White Widow heritage with a soft berry-pine finish."],
+  ["Blueberry", 20, 80, 18, 0.3, "Indica", "Afghani x Thai x Purple Thai", "Myrcene", ["blueberry", "sweet", "vanilla"], ["relaxed", "sleepy", "happy"], "Legendary fruit-forward indica from the modern breeding canon."],
+  ["Charlotte's Web", 50, 50, 1, 12, "Hybrid", "CBD-rich hemp cultivar", "Myrcene", ["earth", "pine", "floral"], ["clear", "mild", "non-intoxicating"], "Famous high-CBD cultivar known for very low THC expression."],
+  ["Chem 91", 55, 45, 22, 0.1, "Hybrid", "Chemdawg phenotype", "Caryophyllene", ["diesel", "chemical", "pine"], ["euphoric", "heady", "bold"], "Historic chem cut behind many modern gas-heavy hybrids."],
+  ["Clementine", 70, 30, 20, 0.1, "Sativa", "Tangie x Lemon Skunk", "Terpinolene", ["orange", "lemon", "sweet"], ["energetic", "focused", "bright"], "Citrus-forward sativa hybrid with clean orange-lemon momentum."],
+  ["Cookies and Cream", 50, 50, 22, 0.1, "Hybrid", "Starfighter x Girl Scout Cookies", "Caryophyllene", ["vanilla", "cookie", "nut"], ["relaxed", "happy", "balanced"], "Dessert hybrid with creamy cookie notes and a polished finish."],
+  ["G13", 30, 70, 21, 0.2, "Indica", "Afghani selection", "Myrcene", ["earth", "pine", "sweet"], ["calm", "body", "sleepy"], "Myth-heavy indica cultivar with earthy pine and deep relaxation."],
+  ["Ghost OG", 45, 55, 21, 0.1, "Hybrid", "OG Kush phenotype", "Limonene", ["citrus", "pine", "earth"], ["euphoric", "relaxed", "smooth"], "Respected OG cut with lemon-pine clarity and kush depth."],
+  ["Godfather OG", 40, 60, 28, 0.1, "Hybrid", "OG Kush x Granddaddy Purple lineage", "Caryophyllene", ["grape", "pine", "earth"], ["heavy", "euphoric", "sleepy"], "High-potency OG-style hybrid with a grape-earth undertone."],
+  ["Golden Goat", 70, 30, 20, 0.1, "Sativa", "Hawaiian-Romulan x Island Sweet Skunk", "Terpinolene", ["tropical", "citrus", "spice"], ["creative", "uplifted", "social"], "Bright tropical sativa hybrid with a lively, expressive profile."],
+  ["Island Sweet Skunk", 80, 20, 19, 0.1, "Sativa", "Sweet Skunk selection", "Terpinolene", ["grapefruit", "skunk", "tropical"], ["energetic", "happy", "social"], "Citrus-skunk sativa line known for daytime lift."],
+  ["Kosher Kush", 20, 80, 23, 0.1, "Indica", "OG Kush lineage", "Myrcene", ["earth", "pine", "spice"], ["sleepy", "relaxed", "heavy"], "Award-winning kush with earthy spice and strong nighttime lean."],
+  ["Lavender", 20, 80, 19, 0.2, "Indica", "Super Skunk x Big Skunk Korean x Afghani x Hawaiian", "Linalool", ["lavender", "floral", "spice"], ["calm", "sleepy", "soft"], "Floral indica with a distinctive lavender perfume."],
+  ["Lemon Skunk", 60, 40, 19, 0.2, "Hybrid", "Skunk phenotype selections", "Limonene", ["lemon", "skunk", "sweet"], ["happy", "creative", "uplifted"], "Zesty skunk hybrid used in many citrus-forward crosses."],
+  ["Master Kush", 10, 90, 20, 0.2, "Indica", "Hindu Kush x Skunk lineage", "Caryophyllene", ["earth", "incense", "citrus"], ["calm", "body", "sleepy"], "Classic Dutch kush with incense-like earth and a steady body feel."],
+  ["NYC Diesel", 60, 40, 20, 0.2, "Hybrid", "Mexican x Afghani lineage", "Limonene", ["diesel", "lime", "grapefruit"], ["creative", "social", "uplifted"], "Citrus-fuel hybrid with old-school East Coast character."],
+  ["Purple Urkle", 20, 80, 19, 0.2, "Indica", "Mendocino purple lineage", "Myrcene", ["grape", "berry", "skunk"], ["sleepy", "relaxed", "dreamy"], "Deep purple indica prized for grape aroma and slow calm."],
+  ["Remedy", 25, 75, 1, 13, "Indica", "Cannatonic x Afghan Skunk", "Myrcene", ["lemon", "pine", "earth"], ["clear", "mild", "soothing"], "CBD-heavy profile with little intoxication and a calm read."],
+  ["Romulan", 20, 80, 20, 0.2, "Indica", "North American indica lineage", "Pinene", ["pine", "earth", "spice"], ["relaxed", "sleepy", "focused"], "Pine-heavy indica with a focused but physical reputation."],
+  ["Skywalker OG", 15, 85, 23, 0.1, "Indica", "Skywalker x OG Kush", "Myrcene", ["diesel", "pine", "spice"], ["heavy", "relaxed", "sleepy"], "OG-powered indica hybrid with fuel, pine, and body weight."],
+  ["Super Skunk", 35, 65, 19, 0.2, "Indica", "Skunk #1 x Afghani", "Myrcene", ["skunk", "earth", "sweet"], ["relaxed", "happy", "body"], "Classic skunk-afghani hybrid with loud aroma and reliable calm."],
+  ["Thai", 100, 0, 18, 0.1, "Sativa", "Thai landrace", "Terpinolene", ["spice", "citrus", "herbal"], ["energetic", "creative", "cerebral"], "Pure sativa landrace family known for spicy, electric lift."],
+  ["The White", 50, 50, 22, 0.1, "Hybrid", "Unknown elite clone", "Caryophyllene", ["earth", "pine", "pepper"], ["balanced", "strong", "calm"], "Frost-heavy clone-only cultivar with a clean, potent profile."],
+  ["UK Cheese", 35, 65, 19, 0.2, "Indica", "Skunk #1 phenotype", "Caryophyllene", ["cheese", "skunk", "earth"], ["happy", "relaxed", "social"], "Pungent skunk phenotype famous for its savory cheese aroma."],
+  ["Watermelon Zkittlez", 30, 70, 23, 0.1, "Indica", "Zkittlez x Watermelon", "Limonene", ["watermelon", "candy", "berry"], ["relaxed", "happy", "mellow"], "Fruit-candy indica hybrid with juicy sweetness and soft calm."],
   ["XJ-13", 70, 30, 19, 0.2, "Sativa", "Jack Herer x G13 Haze", "Terpinolene", ["citrus", "pine", "spice"], ["clear", "creative", "upbeat"], "Clear-headed Jack/Haze hybrid with bright citrus-pine lift."]
 ].map(([name, sativa, indica, thc, cbd, type, lineage, terpene, flavors, effects, note], index) => ({
   id: name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""),
@@ -112,14 +139,16 @@ const strains = [
 }));
 
 const terpenes = [
-  ["Myrcene", "earthy, musky, mango-like", "Common in kush, purple, and classic indica-leaning profiles.", ["earth", "mango", "clove"]],
-  ["Limonene", "lemon peel, orange, citrus oil", "Often reads bright, glossy, and dessert-friendly.", ["citrus", "sweet", "zest"]],
-  ["Caryophyllene", "pepper, clove, fuel, spice", "Shows up in cookies, diesel, chem, and savory hybrids.", ["pepper", "gas", "spice"]],
-  ["Terpinolene", "pine, tea tree, floral citrus", "Frequently found in haze, Jack, and energetic sativa lines.", ["pine", "floral", "citrus"]],
-  ["Pinene", "pine needles, rosemary, forest air", "Adds a crisp evergreen direction to sharper profiles.", ["pine", "herbal", "wood"]],
-  ["Linalool", "lavender, flowers, soft spice", "A floral note that can soften otherwise bold profiles.", ["lavender", "floral", "spice"]],
-  ["Humulene", "hops, wood, dry herbs", "Gives structure to earthy and herbal strains.", ["hops", "wood", "herbal"]],
-  ["Ocimene", "orchard fruit, mint, green herbs", "Adds a sweet, airy top note to tropical profiles.", ["fruit", "mint", "green"]]
+  ["Myrcene", "earthy, musky, mango-like", "The most common dominant terpene in many cannabis catalogs. It often appears in kush, purple, skunk, and CBD-balanced profiles.", ["earth", "mango", "clove"], "Also found in mango, hops, lemongrass, and thyme.", "If a strain reads earthy, soft, and body-heavy, myrcene is often part of the explanation."],
+  ["Limonene", "lemon peel, orange, citrus oil", "A bright citrus terpene that commonly shows up in Lemon, Tangie, Gelato, Cookies, and OG-family profiles.", ["citrus", "sweet", "zest"], "Also found in citrus peels, rosemary, and peppermint.", "Look for limonene when you want a brighter aroma instead of a heavy earthy one."],
+  ["Caryophyllene", "pepper, clove, fuel, spice", "A spicy terpene common in Cookies, Diesel, Chem, Kush, and many savory gas-heavy strains.", ["pepper", "gas", "spice"], "Also found in black pepper, cloves, hops, basil, and oregano.", "Caryophyllene is unusual because it can interact with CB2 receptors, so it is often discussed alongside cannabinoids."],
+  ["Terpinolene", "pine, tea tree, floral citrus", "Often found in energetic Haze, Jack, Dutch, and citrus-skunk lines. It can smell complex: part pine, part fruit, part herbs.", ["pine", "floral", "citrus"], "Also found in lilac, nutmeg, tea tree, apples, and cumin.", "Terpinolene-heavy strains can feel very different from myrcene-heavy strains even when THC is similar."],
+  ["Pinene", "pine needles, rosemary, forest air", "A crisp evergreen terpene that gives strains a fresh forest note and can sharpen the aroma of OG, Jack, and classic pine cultivars.", ["pine", "herbal", "wood"], "Also found in pine needles, rosemary, basil, parsley, and dill.", "Pinene is a good clue when a strain smells like fresh herbs or conifer forest."],
+  ["Linalool", "lavender, flowers, soft spice", "A floral terpene that can soften sharp gas or skunk notes. It appears less often as the main terpene but matters when present.", ["lavender", "floral", "spice"], "Also found in lavender, coriander, and rosewood.", "Floral, perfume-like strains often have linalool in the background."],
+  ["Humulene", "hops, wood, dry herbs", "A dry, woody terpene that gives structure to herbal, hoppy, and earthy profiles.", ["hops", "wood", "herbal"], "Also found in hops, sage, ginseng, and clove.", "Humulene can make a strain smell less sweet and more herbal or beer-like."],
+  ["Ocimene", "orchard fruit, mint, green herbs", "A sweet, airy terpene that appears in tropical, minty, and fresh green profiles.", ["fruit", "mint", "green"], "Also found in mint, parsley, basil, orchids, and kumquats.", "Ocimene usually reads as a top note rather than a heavy base note."],
+  ["Nerolidol", "wood, tea, fresh bark", "A secondary terpene with a soft woody-floral tone. It is useful for describing strains that smell like tea, bark, or lightly floral wood.", ["wood", "tea", "floral"], "Also found in tea tree, jasmine, and ginger.", "Nerolidol is usually not the headline terpene, but it can round out dessert and floral strains."],
+  ["Bisabolol", "chamomile, honey, soft flowers", "A gentle floral terpene that can add a honeyed, chamomile-like softness to the aroma profile.", ["honey", "chamomile", "floral"], "Also found in chamomile and candeia trees.", "Useful when a strain smells delicate, sweet, and floral rather than loud or gassy."]
 ];
 
 const glossary = [
@@ -235,11 +264,13 @@ function renderFeatured() {
 
 function renderTerpenes() {
   $("#terpene-grid").innerHTML = terpenes
-    .map(([name, aroma, description, tags]) => `
+    .map(([name, aroma, description, tags, foundIn, readingTip]) => `
       <article class="terpene-card">
         <p class="eyebrow">${name}</p>
         <h3>${aroma}</h3>
         <p>${description}</p>
+        <p><strong>Found beyond cannabis:</strong> ${foundIn}</p>
+        <p><strong>How to read it:</strong> ${readingTip}</p>
         <div class="tag-row">${tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>
       </article>
     `)
